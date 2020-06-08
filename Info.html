@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="wicart.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="wicart.css" />
     <link rel="stylesheet" href="Info.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Podkova:wght@500;600&display=swap" rel="stylesheet">
     <title>Falcon Ceramics - О нас</title>
+
+       <!-- Favicons-->
+       <link rel="apple-touch-icon" sizes="180x180" href="Image/Favicons/apple-touch-icon.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="Image/Favicons/favicon-32x32.png">
+       <link rel="icon" type="image/png" sizes="16x16" href="Image/Favicons/favicon-16x16.png">
+       <link rel="manifest" href="Image/Favicons/site.webmanifest">
+       <link rel="mask-icon" href="Image/Favicons/safari-pinned-tab.svg" color="#5bbad5">
+       <meta name="msapplication-TileColor" content="#da532c">
+       <meta name="theme-color" content="#ffffff">
+       
 </head>
 
 <!-- Sprite -->
@@ -36,14 +48,14 @@
 <header class="header" id="header">
     <div class="container">
         <div class="header__inner">
-            <a href="#"><img class="logo" src="Image/logo.png" alt="Логотип"></a>
+            <a href="index.html"><img class="logo" src="Image/logo.png" alt="Логотип"></a>
             <nav class="nav">
-                <a class="nav__link" href="#">О нас</a>
-                <a class="nav__link" href="#">Каталог</a>
-                <a class="nav__link" href="#">Отзывы</a>
-                <a class="nav__link" href="#">Оплата и доставка</a>
+                <a class="nav__link" href="Info.html">О нас</a>
+                <a class="nav__link" href="Catalog.html">Каталог</a>
+                <a class="nav__link" href="Reviews.html">Отзывы</a>
+                <a class="nav__link" href="Shipping.html">Оплата и доставка</a>
             </nav>
-            <a href="#"><img class="cart" src="Image/корзина.png" alt="Cart"></a>
+            <a href="#" onclick="cart.showWinow('bcontainer', 1)"><img class="cart" src="Image/корзина.png" alt="Cart"></a>
         </div>
     </div>
 </header>
@@ -69,7 +81,7 @@
                 <div id="map">
                     <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
                         <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
-                        var setting = {"height":450,"width":600,"zoom":13,"queryString":"улица Свободы, 2к5, Челябинск, Россия","place_id":"ChIJ__8_qDntxUMRk9TOw3B5Bg4","satellite":false,"centerCoord":[55.17614761867329,61.41939073096727],"cid":"0xe067970c3ced493","lang":"ru","cityUrl":"/russia/chelyabinsk-19829","cityAnchorText":"Карта [CITY1], Урал - Сибирь - Дальний Восток, Россия","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"215925"};
+                        var setting = {"height":1080,"width":1159,"zoom":13,"queryString":"улица Свободы, 2к5, Челябинск, Россия","place_id":"ChIJ__8_qDntxUMRk9TOw3B5Bg4","satellite":false,"centerCoord":[55.17614761867329,61.41939073096727],"cid":"0xe067970c3ced493","lang":"ru","cityUrl":"/russia/chelyabinsk-19829","cityAnchorText":"Карта [CITY1], Урал - Сибирь - Дальний Восток, Россия","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"215925"};
                         var d = document;
                         var s = d.createElement('script');
                         s.src = 'https://1map.com/js/script-for-user.js?embed_id=215925';
@@ -86,7 +98,7 @@
                 <p class="contacts_title">КОНТАКТЫ</p>
                 <div class="contacts__address">
                     <p class="contacts_subtitle">Адрес мастерской</p>
-                    <p class="contacts_text">Россия, г. Челябинск, ул. Свободы 2, корпус 5</p>
+                    <p class="contacts_text">Россия, г. Челябинск,<br> ул. Свободы 2, корпус 5</p>
                 </div>
                 <div class="contacts__mail">
                     <p class="contacts_subtitle">E-mail адрес</p>
@@ -139,6 +151,46 @@
         <div class="copyright__text">&copy 2020 Falcon Ceramics by Liza Sokol</div>
     </div>
 </footer>
+
+<div id="order" class="popup">
+    <a href="#" onclick="cart.closeWindow('order', 0)" style="float:right"><img src="Image/Без названия.jpg" alt=""></a>
+    <h4 class="Order_text">Введите ваши контактные данные:</h4>
+
+    <form id="formToSend">
+        <input id="fio" type="text" placeholder="ФИО" class="validate[required]" />
+        <input id="city" type="text" placeholder="Город" class="validate[required]" />
+        <input id="phone" type="text" placeholder="Контактный телефон" class="validate[required]" />
+        <input id="email" type="text" placeholder="Электронная почта" class="validate[required]" />
+        <input id="address" type="text" placeholder="Адреc" class="validate[required]" />
+        <b class="Delivery">Доставка:</b>
+        <select id="delivery">
+            <option value="-">-</option>
+            <option value="Самовывоз">Самовывоз</option>
+            <option value="Курьер">Курьер по Челябинску</option>
+            <option value="СДЭК">Служба СДЭК</option>
+        </select>
+    </form>
+    <button class="bbuttonn" onclick="alert('Спасибо за заказ! \nАдминистратор свяжется с вами в ближайшее время.'); cart.sendOrder('formToSend,overflw,bsum');" href="#">Отправить заказ</button>
+</div>
+
+<script>
+    var cart;
+    var config;
+    var wiNumInputPrefID;
+    /* WI-GLOBAL-VARS */
+    $(document).ready(function () {
+        var contactForm = $('#formToSend');
+        cart = new WICard("cart");
+        config = { 'clearAfterSend': true, 'showAfterAdd': false, 'validate': contactForm };
+
+        cart.init("basketwidjet", config);
+        /* WI-MODULES */
+
+    });
+    document.addEventListener('visibilitychange', function (e) {
+        cart.init("basketwidjet", config);
+    }, false);
+</script>
 
 <!-- Javascript -->
 <script src="index.js"></script>

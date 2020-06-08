@@ -227,3 +227,38 @@ body {
     font-size: 15px;
     line-height: 1.5;
 }
+
+/* Корзина */
+
+.item-title{
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}
+
+.Order_text {
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.Delivery {
+font-size: 18px;
+font-weight: normal;
+}
+
+.order {
+    display: flex;
+}
+
+.bbuttonn
+{
+    margin-top: 16px;
+    font-family: 'Podkova', serif;
+    color: black;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);	
+    padding: 6px;
+    font-size: 20px;	
+    float: right;
+}

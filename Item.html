@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="wicart.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="wicart.css" />
     <link rel="stylesheet" href="Item.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Podkova:wght@500;600&display=swap" rel="stylesheet">
     <title>Falcon Ceramics</title>
+
+       <!-- Favicons-->
+       <link rel="apple-touch-icon" sizes="180x180" href="Image/Favicons/apple-touch-icon.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="Image/Favicons/favicon-32x32.png">
+       <link rel="icon" type="image/png" sizes="16x16" href="Image/Favicons/favicon-16x16.png">
+       <link rel="manifest" href="Image/Favicons/site.webmanifest">
+       <link rel="mask-icon" href="Image/Favicons/safari-pinned-tab.svg" color="#5bbad5">
+       <meta name="msapplication-TileColor" content="#da532c">
+       <meta name="theme-color" content="#ffffff">
+       
 </head>
 <body>
     
+<!-- Price -->
+<script>
+    var priceList = {
+        "001" : {"id" : "001", "subid" : {}, "name" : "Чашка \"Морские волны\"", "price" : "600"},
+        "002" : {"id" : "002", "subid" : {}, "name" : "Чайная пара \"Майский завтрак\"", "price" : "1100"},
+        "003" : {"id" : "003", "subid" : {}, "name" : "Чашка \"Рыбки\"", "price" : "600"},
+        "004" : {"id" : "004", "subid" : {}, "name" : "Чашка \"Летние сумерки\"", "price" : "500"},
+        "005" : {"id" : "005", "subid" : {}, "name" : "Набор тарелок \"Весенний лист\"", "price" : "900"},
+        "006" : {"id" : "006", "subid" : {}, "name" : "Чашка \"Песчаный пляж\"", "price" : "550"},
+        };
+    </script>  
+
 <!-- Sprite -->
 <svg style="display: none;"> 
 
@@ -37,14 +61,14 @@
 <header class="header" id="header">
     <div class="container">
         <div class="header__inner">
-            <a href="#"><img class="logo" src="Image/logo.png" alt="Логотип"></a>
+            <a href="index.html"><img class="logo" src="Image/logo.png" alt="Логотип"></a>
             <nav class="nav">
-                <a class="nav__link" href="#">О нас</a>
-                <a class="nav__link" href="#">Каталог</a>
-                <a class="nav__link" href="#">Отзывы</a>
-                <a class="nav__link" href="#">Оплата и доставка</a>
+                <a class="nav__link" href="Info.html">О нас</a>
+                <a class="nav__link" href="Catalog.html">Каталог</a>
+                <a class="nav__link" href="Reviews.html">Отзывы</a>
+                <a class="nav__link" href="Shipping.html">Оплата и доставка</a>
             </nav>
-            <a href="#"><img class="cart" src="Image/корзина.png" alt="Cart"></a>
+            <a href="#" onclick="cart.showWinow('bcontainer', 1)"><img class="cart" src="Image/корзина.png" alt="Cart"></a>
         </div>
     </div>
 </header>
@@ -59,7 +83,7 @@
             <div class="Item__text">
                 <div class="Item__subtitle">Керамическая чашка с ножками покрыта пищевой глазурью и прошла несколько высокотемпературных обжигов. Чашка имеет прекрасный бирюзовый цвет с имитацией бронзовой чешуи.<br>Цена за одну чашку.</div>
                 <div class="price">Цена: 600 рублей</div>
-                <a class="btn btn--red" href="#">В корзину</a>
+                <a class="btn btn--red" href="#" id="wicartbutton_003" onclick="cart.addToCart(this, '003', priceList['003'])">В корзину</a>
             </div>
         </div>
     </div>
@@ -103,5 +127,45 @@
         <div class="copyright__text">&copy 2020 Falcon Ceramics by Liza Sokol</div>
     </div>
 </footer>
+
+<div id="order" class="popup">
+    <a href="#" onclick="cart.closeWindow('order', 0)" style="float:right"><img src="Image/Без названия.jpg" alt=""></a>
+    <h4 class="Order_text">Введите ваши контактные данные:</h4>
+
+    <form id="formToSend">
+        <input id="fio" type="text" placeholder="ФИО" class="validate[required]" />
+        <input id="city" type="text" placeholder="Город" class="validate[required]" />
+        <input id="phone" type="text" placeholder="Контактный телефон" class="validate[required]" />
+        <input id="email" type="text" placeholder="Электронная почта" class="validate[required]" />
+        <input id="address" type="text" placeholder="Адреc" class="validate[required]" />
+        <b class="Delivery">Доставка:</b>
+        <select id="delivery">
+            <option value="-">-</option>
+            <option value="Самовывоз">Самовывоз</option>
+            <option value="Курьер">Курьер по Челябинску</option>
+            <option value="СДЭК">Служба СДЭК</option>
+        </select>
+    </form>
+    <button class="bbuttonn" onclick="alert('Спасибо за заказ! \nАдминистратор свяжется с вами в ближайшее время.'); cart.sendOrder('formToSend,overflw,bsum');" href="#">Отправить заказ</button>
+</div>
+
+<script>
+    var cart;
+    var config;
+    var wiNumInputPrefID;
+    /* WI-GLOBAL-VARS */
+    $(document).ready(function () {
+        var contactForm = $('#formToSend');
+        cart = new WICard("cart");
+        config = { 'clearAfterSend': true, 'showAfterAdd': false, 'validate': contactForm };
+
+        cart.init("basketwidjet", config);
+        /* WI-MODULES */
+
+    });
+    document.addEventListener('visibilitychange', function (e) {
+        cart.init("basketwidjet", config);
+    }, false);
+</script>
 </body>
 </html>
