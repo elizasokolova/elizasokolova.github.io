@@ -1,0 +1,380 @@
+body {
+    margin: 0;
+    font-family: 'Podkova', serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Container
+===========================*/
+.container {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Header 
+===========================*/
+
+.header {
+    padding: 15px;
+    background-color: #e8debd;
+    border-bottom: 1px solid rgb(128, 122, 100);
+}
+
+.header.fixed {
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    background-color: #e8debd;
+    z-index: 999;
+}
+
+.header.fixed .logo {
+    padding-top: 3px;
+    height: 60px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    height: 70px;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav__link {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    opacity: .5;
+}
+
+.cart {
+    width: 35px;
+    height: 35px;
+    transition: opacity .1s linear;
+}
+
+.cart:hover {
+    opacity: .5;
+}
+
+/* Intro
+===============================*/
+
+.intro {
+    height: 1080px;
+    background-image: url(Image/Intro-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle {
+    display: inline-block;
+	width: 50%;
+    height: 30%;
+    background: white;
+    z-index: 100;
+}
+
+.intro__title {
+    font-family: "Josefin Sans";
+    color: #7d695f;
+    font-size: 80px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin: auto;
+    padding-top: 10%;
+}
+
+.intro__subtitle {
+    font-family: "Josefin Sans";
+    color: #7d695f;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    padding-top: 5%;
+}
+
+.about_us {
+    height: 1080px;
+    background-image: url(Image/Intro.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.about {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+.about_title {
+    color: #e8debd;
+    font-size: 60px;
+    text-align: center;
+}
+
+.about_text {
+    color: white;
+    font-size: 25px;
+    text-align: justify;
+}
+
+
+/* Catalog 
+===========================*/
+
+.catalog {
+    height: 1080px;
+    width: 100%;
+    background-image: url(Image/Catalog-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+	width: 80%;
+    height: 70%;
+    background: white;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cards {
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 20%;
+    text-align: center;
+}
+
+.teapair {
+    background: url(Image/eef5e77aadaea969326d538476ou--posuda-keramicheska-chashka-glubokij-biryuzovyj.jpg);
+    width:100%;
+    height:43%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    margin-bottom: 29px;
+}
+
+.plates {
+    background: url(Image/42594e07c9a8d1f104c847e44fa73e3c.jpg);
+    width:100%;
+    height:43%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    margin-bottom: 29px;
+}
+.cups {
+    background: url(Image/Tovar.png);
+    width:100%;
+    height:43%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    margin-bottom: 29px;
+}
+
+.catalog__title {
+    text-align: center;
+    color: #7d695f;
+    font-size: 60px;
+    padding-bottom: 40px;
+    padding-top: 70px;
+    text-decoration: none;
+    transition: opacity .1s linear;
+}
+
+.catalog__title:hover {
+    opacity: .5;
+}
+
+.card__title {
+    color: #7d695f;
+    font-size: 33px;
+    text-decoration: none;
+    margin: 0;
+    transition: opacity .1s linear;
+}
+
+.card__title:hover {
+    opacity: .5;
+}
+
+.card__subtitle {
+    color: #7d695f;
+    font-size: 20px;
+    padding-top: 25px;
+    
+}
+
+/* News 
+==============================*/
+
+.news {
+    height: 1080px;
+    width: 100%;
+    background-image: url(Image/Catalog.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news__square {
+	width: 80%;
+    height: 70%;
+    background: white;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.news__head {
+    text-align: center;
+    color: #7d695f;
+    font-size: 60px;
+    padding-bottom: 40px;
+    padding-top: 70px;
+}
+
+.news__block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.news__icon {
+    width: 45%;
+    background: url(Image/fotorcreated.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+} 
+
+.news__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+    width: 45%;
+}
+
+.news__title {
+    text-align: center;
+    color: #7d695f;
+    font-size: 39px;
+    transition: opacity .1s linear;
+}
+    
+.news__title:hover {
+    opacity: .5;
+}
+
+.news__subtitle {
+    color: #7d695f;
+    padding-top: 40px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Footer 
+====================================*/
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 15px;
+    background-color: #64534c;
+}
+
+.footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__block {
+    width: 33.333%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer__text {
+    color: #f7f5ee;
+    font-size: 18px;
+    text-align: center;
+}
+
+.city {
+    margin: 0 auto 5px auto;
+}
+
+.street {
+    margin: 0 auto;
+}
+
+.social__item {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .1s linear;
+}
+
+.social__item:hover {
+    opacity: .6;
+}
+
+.copyright {
+    padding-top: 15px;
+}
+
+.copyright__text {
+    text-align: center;
+    color: #f7f5ee;
+    font-size: 15px;
+    line-height: 1.5;
+}

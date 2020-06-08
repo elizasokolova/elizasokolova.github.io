@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: 'Podkova', serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* {
+border: 1px solid red;
+}*/
+
+/* Container
+===========================*/
+.container {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Header 
+===========================*/
+
+.header {
+    padding: 15px;
+    background-color: #e8debd;
+    border-bottom: 1px solid rgb(128, 122, 100);
+}
+
+.header.fixed {
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    background-color: #e8debd;
+    z-index: 999;
+}
+
+.header.fixed .logo {
+    padding-top: 3px;
+    height: 60px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    height: 70px;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav__link {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    opacity: .5;
+}
+
+.cart {
+    width: 35px;
+    height: 35px;
+    transition: opacity .1s linear;
+}
+
+.cart:hover {
+    opacity: .5;
+}
+
+/* Shipping
+========================*/
+
+.shipping {
+    height: 990px;
+    background-image: url(Image/Catalog.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.right__container {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+}
+
+.left__container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-right: 150px;
+}
+
+.right_title {
+    text-align: center;
+    font-size: 60px;
+    color: #7d695f;
+    font-weight: bold;
+}
+.left_title {
+    text-align: center;
+    font-size: 58px;
+    color: #e8debd;
+    font-weight: bold;
+}
+
+.right_subtitle {
+    margin-top: 0;
+    width: 70%;
+    text-align: center;
+    font-size: 32px;
+    color: #64534c;
+    font-weight: bold;
+}
+
+.left_subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 70%;
+    text-align: center;
+    font-size: 32px;
+    color: #e8debd;
+}
+
+.right_text {
+    width: 70%;
+    text-align: center;
+    font-size: 25px;
+    color: #7d695f;
+    font-weight: bold;
+}
+.right_text:last-child {
+    margin-top: 40px;
+    margin-left: 90px;
+    color: #64534c;
+    width: 80%;
+}
+
+.left_text {
+    width: 90%;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+.left_text:last-child {
+    color: #e8debd;
+    width: 100%;
+}
+
+.Block_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Block_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 56px;
+}
+
+.contacts_text {
+    text-align: center;
+    font-size: 26px;
+    color: #64534c;
+}
+
+.shipping__containers {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Footer 
+====================================*/
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 15px;
+    background-color: #64534c;
+}
+
+.footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__block {
+    width: 33.333%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer__text {
+    color: #f7f5ee;
+    font-size: 18px;
+    text-align: center;
+}
+
+.city {
+    margin: 0 auto 5px auto;
+}
+
+.street {
+    margin: 0 auto;
+}
+
+.social__item {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .1s linear;
+}
+
+.social__item:hover {
+    opacity: .6;
+}
+
+.copyright {
+    padding-top: 15px;
+}
+
+.copyright__text {
+    text-align: center;
+    color: #f7f5ee;
+    font-size: 15px;
+    line-height: 1.5;
+}
